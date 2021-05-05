@@ -4,6 +4,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import 'react-native-gesture-handler';
 import home from './home';
 import studentID from './studentId';
+import playList from './playList';
 
 const Stack = createStackNavigator();
 
@@ -15,6 +16,7 @@ export default StackPage = () => {
                 initialRouteName='home'>
                 <Stack.Screen name ='home' component={home} />
                 <Stack.Screen name ='studentID' component={studentID}/>
+                <Stack.Screen name ='playList' component={playList}/>
 
             </Stack.Navigator>
         </NavigationContainer>
