@@ -52,11 +52,32 @@ const musics = [
         time:'3:35'
     },
     {
-        title:'',
-        singer:'',
-        count:'',
-        image:'',
-        time:''
+        title:'ALIEN',
+        singer:'LEE SUHYUN',
+        count:'2086만회',
+        image:'https://i.ytimg.com/vi/yTXhlipykWI/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLACB1yDTgIkmdwe4Bds3rbnqLEbEQ',
+        time:'3:24'
+    },
+    {
+      title:'Panorama',
+      singer:'IZ*ONE',
+      count:'5190만회',
+      image:'https://i.ytimg.com/an_webp/jeSeNxKasKA/mqdefault_6s.webp?du=3000&sqp=CIDl2oQG&rs=AOn4CLBgHuCycK7WMm6fkDlu6OGaSKNsUw',
+      time:'3:52'
+    },
+    {
+      title:'News',
+      singer:'9MUSES',
+      count:'455만회',
+      image:'https://i.ytimg.com/vi/S7gXErQxdao/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC6F1TORFT7mRQ8kSawN2wePFBTZQ',
+      time:'3:10'
+    },
+    {
+      title:'Rollin',
+      singer:'Brave Girls',
+      count:'2510만회',
+      image:'https://i.ytimg.com/vi/nw6mcjNlh8E/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAUcGQIe3-dq9VvqVGZXbNQRCsqSg',
+      time:'3:18'
     },
 ];
 
@@ -78,15 +99,21 @@ const StudentID = ({navigation}) =>{
                         source={{uri:value.image}}
                         style = {{height:"100%",width:'100%', borderWidth:1, resizeMode:'contain'}}
                       />
+                      <Text style={{fontSize:10}}>
+                        {value.time}
+                      </Text>
                     </View>
                     <View style={styles.innerText1}>
-                        <Text style={{fontSize:17, color:'#6E6E6E'}}>
+                        <Text style={{fontSize:18, color:'#000000',paddingBottom:3}}>
                             {value.title}
                         </Text>
                         <View style={styles.innerText2}>
-                        <Text style={{fontSize:17}}>
+                          <Text style={{fontSize:15, color:'#6E6E6E',width:'50%'}}>
                             {value.singer}
-                        </Text>
+                          </Text>
+                          <Text style={{fontSize:15, color:'#6E6E6E',width:'50%',textAlign:'right'}}>
+                            {value.count}
+                          </Text>
                     </View>
                     </View>
                   </View>
@@ -121,7 +148,7 @@ const StudentID = ({navigation}) =>{
     up : {
       justifyContent:'center',
       alignItems:'center',
-      height:'70%',
+      height:'80%',
       width:'90%',
       borderRadius:15,
       borderWidth:1,
@@ -131,7 +158,7 @@ const StudentID = ({navigation}) =>{
     down : {
       justifyContent:'center',
       alignItems:'center',
-      height:'20%',
+      height:'10%',
       width:'90%'
     },
     inneritem : {
@@ -142,7 +169,7 @@ const StudentID = ({navigation}) =>{
       alignItems:'center',
     },
      upItme : {
-      flex:1,
+      flex:0.5,
       width:'100%',
       backgroundColor:'#0B173B',
       borderTopLeftRadius:15,
@@ -173,10 +200,14 @@ const StudentID = ({navigation}) =>{
     innerText1:{
       flex:7,
       justifyContent:'center',
-      alignItems:'center',
+      //alignItems:'center',
+      //backgroundColor:'pink',
+      marginLeft:15
     },
     innerText2:{
       //flex:5
+      width:'80%',
+      flexDirection: 'row',
     },
     downBtn :{
       width:100,
