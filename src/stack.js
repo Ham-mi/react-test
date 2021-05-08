@@ -18,7 +18,7 @@ export default StackPage = () => {
                 <Stack.Screen name ='home' component={home} />
                 <Stack.Screen name ='studentID' component={studentID}/>
                 <Stack.Screen name ='playList' component={playList}/>
-                <Stack.Screen name ='scrollTest' component={scrollTest}/>
+                {/* <Stack.Screen name ='scrollTest' component={scrollTest}/> */}
 
             </Stack.Navigator>
         </NavigationContainer>

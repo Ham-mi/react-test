@@ -13,42 +13,42 @@ const musics = [
         title:'어질어질',
         singer:'SOMI',
         count:'170만회',
-        image:'',
+        image:'https://i.ytimg.com/vi/QPASusjw7uU/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCrvtB474DvfDwXx4bpwsRTQIhhyg',
         time:'3:08'
     },
     {
         title:'BIRTHDAY',
         singer:'SOMI',
         count:'8916만회',
-        image:'',
+        image:'https://i.ytimg.com/vi/BwVNflDzmYk/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDgxVsis380UIYimIfVpbRyRqCamQ',
         time:'3:05'
     },
     {
         title:'What You Waiting For',
         singer:'SOMI',
         count:'4452만회',
-        image:'',
+        image:'https://i.ytimg.com/vi/v65iG3jy2Jc/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCAx622empVl_6LcX3xvJsb9T3wsQ',
         time:'2:52'
     },
     {
         title:'Heaven',
         singer:'Ailee',
         count:'2828만회',
-        image:'',
+        image:'https://i.ytimg.com/vi/1osFlFTIgp4/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDeUvgmNPfevusGsoU8A5n-eUNEHQ',
         time:'3:44'
     },
     {
         title:'Celebrity',
         singer:'IU',
         count:'7386만회',
-        image:'',
+        image:'https://i.ytimg.com/vi/0-q1KafFCLU/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLD6XIEo8_GZamiAXdYO90c7fx7WTg',
         time:'3:18'
     },
     {
         title:'HOME;RUN',
         singer:'SEVENTEEN',
         count:'5188만회',
-        image:'',
+        image:'https://i.ytimg.com/vi/fuszuY6PiIw/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBFtwrK-X1COdx0cZ8Sx4dC7rpUkg',
         time:'3:35'
     },
     {
@@ -66,20 +66,28 @@ const StudentID = ({navigation}) =>{
         <View style={styles.up}>
           <View style={styles.upItme}><Text style={{fontSize:28, color:'white'}}>PlayList</Text></View>
           <View style={styles.upText}>
-              {/* 왜 스크롤뷰만 해놓으면 값이 사라질까~ */}
               <ScrollView>
                 {musics.map((value,index) => (
                   <View style={styles.inneritem} key={index}>
-                    <Text>{index}</Text>
+                    <View style={styles.innerNum}>
+                      <Text style={{fontSize:17,fontWeight:'bold', color:'#6E6E6E'}}>{(index+1)}</Text>
+                    </View>
+                    <View style={styles.innerImage}>
+                      <Image
+                        //source={require(value.image)}
+                        source={{uri:value.image}}
+                        style = {{height:"100%",width:'100%', borderWidth:1, resizeMode:'contain'}}
+                      />
+                    </View>
                     <View style={styles.innerText1}>
                         <Text style={{fontSize:17, color:'#6E6E6E'}}>
                             {value.title}
                         </Text>
-                    </View>
-                    <View style={styles.innerText2}>
+                        <View style={styles.innerText2}>
                         <Text style={{fontSize:17}}>
                             {value.singer}
                         </Text>
+                    </View>
                     </View>
                   </View>
                 ))}
@@ -131,7 +139,7 @@ const StudentID = ({navigation}) =>{
       height:80,
       borderBottomWidth:1,
       borderColor:'#BDBDBD',
-      alignItems:'center'
+      alignItems:'center',
     },
      upItme : {
       flex:1,
@@ -150,12 +158,25 @@ const StudentID = ({navigation}) =>{
       borderBottomLeftRadius:15,
       borderBottomRightRadius:15,
     },
+    innerNum:{
+      flex:1,
+      justifyContent:'center',
+      alignItems:'center',
+    },
+    innerImage:{
+      flex:2,
+      justifyContent:'center',
+      alignItems:'center',
+      marginTop:15,
+      marginBottom:15
+    },
     innerText1:{
-      flex:4,
-      alignItems:'center'
+      flex:7,
+      justifyContent:'center',
+      alignItems:'center',
     },
     innerText2:{
-      flex: 6
+      //flex:5
     },
     downBtn :{
       width:100,
