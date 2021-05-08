@@ -5,6 +5,7 @@ import 'react-native-gesture-handler';
 import home from './home';
 import studentID from './studentId';
 import playList from './playList';
+import scrollTest from './scrollTest';
 
 const Stack = createStackNavigator();
 
@@ -17,6 +18,7 @@ export default StackPage = () => {
                 <Stack.Screen name ='home' component={home} />
                 <Stack.Screen name ='studentID' component={studentID}/>
                 <Stack.Screen name ='playList' component={playList}/>
+                <Stack.Screen name ='scrollTest' component={scrollTest}/>
 
             </Stack.Navigator>
         </NavigationContainer>

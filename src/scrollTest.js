@@ -5,7 +5,7 @@ import {
   View,
   Image,
   TouchableOpacity,
-  ScrollView,
+  ScrollView
 } from 'react-native';
 
 const musics = [
@@ -60,14 +60,10 @@ const musics = [
     },
 ];
 
-const StudentID = ({navigation}) =>{
+const scrollTest = ({navigation}) =>{
     return(
-      <View style={styles.all}>
-        <View style={styles.up}>
-          <View style={styles.upItme}><Text style={{fontSize:28, color:'white'}}>PlayList</Text></View>
-          <View style={styles.upText}>
-              {/* 왜 스크롤뷰만 해놓으면 값이 사라질까~ */}
-              <ScrollView>
+
+            <ScrollView>
                 {musics.map((value,index) => (
                   <View style={styles.inneritem} key={index}>
                     <Text>{index}</Text>
@@ -83,72 +79,19 @@ const StudentID = ({navigation}) =>{
                     </View>
                   </View>
                 ))}
-              </ScrollView>
-          </View>
-          
-        </View>
-        <View style={styles.down}>
-          <TouchableOpacity 
-            onPress={()=> navigation.navigate('home')}
-            style={styles.downBtn}
-          >
-            <Text style={{color:'white'}}>돌아가기</Text>
-          </TouchableOpacity>
-        </View>
-      </View>
-    );
-  };
-  export default StudentID;
-  
+            </ScrollView>
+    )
+};
 
-  const styles = StyleSheet.create({
-    all : {
-      justifyContent:'center',
-      alignItems:'center',
-      height:'100%',
-      width:'100%',
-      backgroundColor:'#BDBDBD'
-    }
-    ,
-    up : {
-      justifyContent:'center',
-      alignItems:'center',
-      height:'70%',
-      width:'90%',
-      borderRadius:15,
-      borderWidth:1,
-      borderColor:'#BDBDBD',
-      flexDirection: 'column'
-    },
-    down : {
-      justifyContent:'center',
-      alignItems:'center',
-      height:'20%',
-      width:'90%'
-    },
+export default scrollTest;
+
+const styles = StyleSheet.create({
     inneritem : {
       flexDirection: 'row',
-      height:80,
+      //height:'25%',
       borderBottomWidth:1,
       borderColor:'#BDBDBD',
       alignItems:'center'
-    },
-     upItme : {
-      flex:1,
-      width:'100%',
-      backgroundColor:'#0B173B',
-      borderTopLeftRadius:15,
-      borderTopRightRadius:15,
-      justifyContent:'center',
-      alignItems:'center',
-    },
-    upText :{
-      flex:5,
-      width:'100%',
-      backgroundColor:'white', 
-      justifyContent:'space-between',
-      borderBottomLeftRadius:15,
-      borderBottomRightRadius:15,
     },
     innerText1:{
       flex:4,
@@ -157,13 +100,5 @@ const StudentID = ({navigation}) =>{
     innerText2:{
       flex: 6
     },
-    downBtn :{
-      width:100,
-      height:30,
-      borderWidth:1,
-      borderRadius:15,
-      backgroundColor:'#0B173B',
-      justifyContent:'center',
-      alignItems:'center',
-    }
+
   });

@@ -32,7 +32,8 @@ const home = ({navigation}) => {
                         <Text style={{color:'white', fontSize:25}}>PLAYLIST</Text>
                     </TouchableOpacity>
                     <TouchableOpacity 
-                        onPress={()=> Linking.openURL('http://www.naver.com')}
+                        //onPress={()=> Linking.openURL('http://www.naver.com')}
+                        onPress={()=> navigation.navigate('scrollTest')}
                         style={styles.btn}>
                         <Text style={{color:'white', fontSize:25}}>NAVER</Text>
                     </TouchableOpacity>
