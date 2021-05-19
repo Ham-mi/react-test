@@ -15,7 +15,12 @@ const home =({navigation}) => {
                         onPress={()=> navigation.navigate('map')}
                         style={styles.btn}>
                         <Text style={{color:'black', fontSize:25}}>교내지도</Text>
-                    </TouchableOpacity>
+                </TouchableOpacity>
+                <TouchableOpacity 
+                        onPress={()=> navigation.navigate('numtop')}
+                        style={styles.btn}>
+                        <Text style={{color:'black', fontSize:25}}>전화번호</Text>
+                </TouchableOpacity>
             </View>
         </SafeAreaView>
     )
