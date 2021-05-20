@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Text, View,StyleSheet} from 'react-native';
+import {Text, View,StyleSheet,Image} from 'react-native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
@@ -15,11 +15,54 @@ const MainScreen = () => {
     return (
         <Tab.Navigator 
             initialRouteName="홈"
+            tabBarOptions={{
+              showLabel:false
+            }}
             >
-            <Tab.Screen name="홈" component={homeStack} />
-            <Tab.Screen name="캠퍼스정보" component={compusStack}/>
-            <Tab.Screen name="마이" component={topTab}/>
-            <Tab.Screen name="더보기" component={topTab}/>
+            <Tab.Screen name="홈" component={homeStack} 
+            options={{
+              tabBarIcon:({focused})=>{
+                return(
+                  <View style={{alignContent:'center', justifyContent:'center'}}>
+                    <Image 
+                    source={focused?require('./assets/home_homeicon_fill.png'):require('./assets/home_homeicon.png')} 
+                    style={{width:40, height:40,}}/>
+                    </View>
+                )},
+            }}/>
+            <Tab.Screen name="캠퍼스정보" component={compusStack}
+            options={{
+              tabBarIcon:({focused})=>{
+                return(
+                  <View style={{alignContent:'center', justifyContent:'center'}}>
+                    <Image 
+                    source={focused?require('./assets/home_campusicon_fill.png'):require('./assets/home_campusicon.png')} 
+                    style={{width:40, height:40,}}/>
+                    </View>
+                )},
+            }}/>
+            <Tab.Screen name="마이" component={topTab}
+            options={{
+              tabBarIcon:({focused})=>{
+                return(
+                  <View style={{alignContent:'center', justifyContent:'center'}}>
+                    <Image 
+                    source={focused?require('./assets/myicon_fill.png'):require('./assets/myicon.png')} 
+                    style={{width:40, height:40,}}/>
+                    </View>
+                )},
+            }}/>
+            <Tab.Screen name="더보기" component={topTab}
+            options={{
+              tabBarIcon:({focused})=>{
+                return(
+                  <View style={{alignContent:'center', justifyContent:'center'}}>
+                    <Image 
+                    source={focused?require('./assets/home_moreicon_fill.png'):require('./assets/home_moreicon.png')} 
+                    style={{width:40, height:40,}}/>
+                    </View>
+                )},
+            }}/>
         </Tab.Navigator>
     );
 };
