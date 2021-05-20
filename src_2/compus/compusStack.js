@@ -9,6 +9,8 @@ import map1 from './Map/map1';
 import map2 from './Map/map2';
 import map3 from './Map/map3';
 import numTop from './Num/numToptab';
+import cirTop from './Cir/cirToptab';
+import eventHome from './Event/event';
 
 
 const Stack = createStackNavigator();
@@ -73,7 +75,24 @@ export default StackPage = () => {
                     headerStyle:{backgroundColor:'white',},
                     headerBackTitleVisible: false,
                     headerTitleAlign:'left',}}/>
+                <Stack.Screen name ='cirtop' component={cirTop} options={{headerTitle:
+                (<View style={styles.headerStyle}>
+                    <Text 
+                    style={{fontSize:30,includeFontPadding:false,color:'black',fontWeight:'bold'}}>동아리</Text>
+                </View>),
+                headerStyle:{backgroundColor:'white',},
+                headerBackTitleVisible: false,
+                headerTitleAlign:'left',}}/>
+                <Stack.Screen name ='eventhome' component={eventHome} options={{headerTitle:
+                (<View style={styles.headerStyle}>
+                    <Text 
+                    style={{fontSize:30,includeFontPadding:false,color:'black',fontWeight:'bold'}}>이벤트</Text>
+                </View>),
+                headerStyle:{backgroundColor:'white',},
+                headerBackTitleVisible: false,
+                headerTitleAlign:'left',}}/>
             </Stack.Navigator>
+
     );
 };
 

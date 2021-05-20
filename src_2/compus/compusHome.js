@@ -21,6 +21,16 @@ const home =({navigation}) => {
                         style={styles.btn}>
                         <Text style={{color:'black', fontSize:25}}>전화번호</Text>
                 </TouchableOpacity>
+                <TouchableOpacity 
+                        onPress={()=> navigation.navigate('cirtop')}
+                        style={styles.btn}>
+                        <Text style={{color:'black', fontSize:25}}>동아리</Text>
+                </TouchableOpacity>
+                <TouchableOpacity 
+                        onPress={()=> navigation.navigate('eventhome')}
+                        style={styles.btn}>
+                        <Text style={{color:'black', fontSize:25}}>이벤트</Text>
+                </TouchableOpacity>
             </View>
         </SafeAreaView>
     )
